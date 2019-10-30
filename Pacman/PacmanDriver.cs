@@ -9,18 +9,20 @@ namespace Pacman
     //Class that will create our object of pac-man and will handle input and output of our program.
     class PacmanDriver
     {
+        int x, y;
+        PacmanMover pac = new PacmanMover();
 
-        public Pacman() //default constructor, starts pacman off in the center of the screen
-        {
-            int x = 5;
-            int y = 5;
+        public void Pacman() //default constructor, starts pacman off in the center of the screen
+        {            
+            x = 5;
+            y = 5;
         }
 
         public void locator()
         {
             Console.WriteLine("Current location -\tX: " + x + "\tY: " + y);
             Console.WriteLine("(U)p, (D)own, (L)eft, (R)ight, or (Q)uit: ");
-            char answer = Console.ReadLine();
+            char answer = Convert.ToChar(Console.ReadLine());
             
             switch (answer)
             {
@@ -49,8 +51,7 @@ namespace Pacman
             //2. update its position based on the user input.
             //3. repeat step 2 until the player inputs 'Q'.
 
-            Pacman pac = new Pacman();
-            Console.WriteLine(pac);
+            
 
         }
 

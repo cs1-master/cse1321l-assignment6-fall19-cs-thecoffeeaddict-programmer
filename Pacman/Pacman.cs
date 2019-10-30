@@ -22,75 +22,78 @@
 
 using System;
 
-public class Pacman
-{
-    //Class variables that are used to hold the current position that pac-man is in.
-    int x;
-    int y;
 
-    //Constructor that will initialize the position of pac-man to the one that is passed in as a parameter.
-    public Pacman(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-        return (x, y);
-    }
 
-    //Methods that will update pac-man's position to be one spot to the right, left, up or down.
-    public void Left()
-    {
-        //nested if statement to update player position (x <- L) and determine whether he will teleport to the right side or not
-        if (x >= 0 && x <= 9)
+        public class PacmanMover
         {
-            x -= 1;
+            //Class variables that are used to hold the current position that pac-man is in.
+            int x;
+            int y;
 
-            if (x < 0)
+            //Constructor that will initialize the position of pac-man to the one that is passed in as a parameter.
+            public int newPac(int x, int y)
             {
-                x = 9;
+                this.x = x;
+                this.y = y;
+                return x;
+                return y;
             }
 
-        }  
-    }
-    public void Right()
-    {
-        //nested if statement to update player position (x -> R) and determine whether he will teleport to the left side or not
-        if (x >= 0 && x <= 9)
-        {
-            x += 1;
+            //Methods that will update pac-man's position to be one spot to the right, left, up or down.
+            public void Left()
+            {
+                //nested if statement to update player position (x <- L) and determine whether he will teleport to the right side or not
+                if (x >= 0 && x <= 9)
+                {
+                    x -= 1;
+
+                    if (x < 0)
+                    {
+                        x = 9;
+                    }
+
+                }  
+            }
+            public void Right()
+            {
+                //nested if statement to update player position (x -> R) and determine whether he will teleport to the left side or not
+                if (x >= 0 && x <= 9)
+                {
+                    x += 1;
             
-            if (x > 9)
-            {
-                x = 0;
-            }
+                    if (x > 9)
+                    {
+                        x = 0;
+                    }
 
-        }
-    }
-    public void Up()
-    {
-        //nested if statement to update player position (y ^ U) and determine whether he will teleport to the bottom or not
-        if (y >= 0 && y <= 9) 
-        {
-            y -= 1;
-
-            if (y < 0)
-            {
-                y = 9;
+                }
             }
+            public void Up()
+            {
+                //nested if statement to update player position (y ^ U) and determine whether he will teleport to the bottom or not
+                if (y >= 0 && y <= 9) 
+                {
+                    y -= 1;
+
+                    if (y < 0)
+                    {
+                        y = 9;
+                    }
         
-        }
-    }
-    public void Down()
-    {
-        //nested if statement to update player position (y v D) and determine whether he will teleport to the top or not
-        if (y >= 0 && y <= 9)
-        {
-            y += 1;
-            
-            if (y > 9)
-            {
-                y = 0;
+                }
             }
+            public void Down()
+            {
+                //nested if statement to update player position (y v D) and determine whether he will teleport to the top or not
+                if (y >= 0 && y <= 9)
+                {
+                    y += 1;
+            
+                    if (y > 9)
+                    {
+                        y = 0;
+                    }
 
+                }
+            }
         }
-    }
-}
