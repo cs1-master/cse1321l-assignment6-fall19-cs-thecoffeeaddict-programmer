@@ -12,52 +12,67 @@ using System;
 public class Color
 {
     //Class variables that are used to hold the current color values.
-    int red;
-    int green;
-    int blue;
+    int R;
+    int G;
+    int B;
+    int L; //luminance
 
 
     //Constructor that will initialize the value of colors that are passed as the parameter
-    public Color(int red, int green, int blue)
+    public Color(int R, int G, int B)
     {
-
+        R = 254;
+        G = 2;
+        B = 100;
     }
 
     //Methods to increase or decrease the red, green and blue components
-    public void IncreaseRed()
+    public void IncreaseRed(int R)
     {
-
+        R += 1;
+        return R;
     }
-    public void DecreaseRed()
+    public void DecreaseRed(int R)
     {
-
+        R -= 1;
+        return R;
     }
-    public void IncreaseGreen()
+    public void IncreaseGreen(int G)
     {
-
+        G += 1;
+        return G;
     }
-    public void DecreaseGreen()
+    public void DecreaseGreen(int G)
     {
-
+        G -= 1;
+        return G;
     }
-    public void IncreaseBlue()
+    public void IncreaseBlue(int B)
     {
-
+        B += 1;
+        return B;
     }
-    public void DecreaseBlue()
+    public void DecreaseBlue(int B)
     {
-
+        B -= 1;
+        return B;
     }
 
     //Method to calculate and print the inverse color
-    public String PrintInverse()
+    public void PrintInverse(int R, int G, int B)
     {
-
+        int invR, invG, invB;
+        invR = 255 - R;
+        invG = 255 - G;
+        invB = 255 - B;
+        Console.WriteLine("Inverse is R: " + invR + "\tG: " + invG + "\tB: " + invB);
     }
 
     //Method that calculates the Luminance and returns the string representing the current values for each component
-    public override String ToString()
+    public string ToString(int R, int G, int B)
     {
-
+        int L = (0.2126 * R) + (0.7512 * G) + (0.0722);
+        string newColors = "R: " + R + "\tG: " + G + "\tB: " + B + "\tL: " + L;
+        return newColors;
     }
 }

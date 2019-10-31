@@ -9,19 +9,11 @@ namespace Pacman
     //Class that will create our object of pac-man and will handle input and output of our program.
     class PacmanDriver
     {
-        public PacmanDriver()
-        {
-            int locationx = 5;
-            int locationy = 5;
-        }
-
         
-
         //Method that will create our object of pac-man and will handle input and output of our program.
         public static void Main(String[] args)
         {
-             PacmanMover x = new PacmanMover();
-             PacmanMover y = new PacmanMover();
+            PacmanMover x = new PacmanMover();
 
             locator();
             
@@ -39,15 +31,15 @@ namespace Pacman
             }
 
             void locator()
-            {
-                Console.WriteLine("Current location -\tX: " + x + "\tY: " + y);
+            { // while
+                Console.WriteLine("Current location -\tX: " + x. + "\tY: " + y);
                 Console.WriteLine("(U)p, (D)own, (L)eft, (R)ight, or (Q)uit: ");
                 char answer = Convert.ToChar(Console.ReadLine());
                 int numanswer = 0;
                 switch (answer)
                 {
                     case 'U':
-                         numanswer = 1;
+                         x.Up();
                          break;
                     case 'D':
                          numanswer = 2;
@@ -62,22 +54,7 @@ namespace Pacman
                         exitSequence();
                         break;
                 }
-                switch (numanswer) 
-                {
-                    case 1:
-                        x.Up();
-                        break;
-                    case 2:
-                        x.Down();
-                        break;
-                    case 3:
-                        y.Left();
-                        break;
-                    case 4:
-                        y.Right();
-                        break;
-
-                }
+          
 
 
 

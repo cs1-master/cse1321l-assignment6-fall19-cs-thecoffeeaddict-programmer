@@ -27,16 +27,16 @@ using System;
         public class PacmanMover
         {
             //Class variables that are used to hold the current position that pac-man is in.
-            int x;
-            int y;
+            private int x;
+            private int y;
+    //getter setter
 
             //Constructor that will initialize the position of pac-man to the one that is passed in as a parameter.
-            public int newPac(int x, int y)
+            public PacmanMover()
             {
-                this.x = x;
-                this.y = y;
-                return x;
-                return y;
+                this.x = 5;
+                this.y = 5;
+
             }
 
             //Methods that will update pac-man's position to be one spot to the right, left, up or down.
@@ -71,15 +71,15 @@ using System;
             public void Up()
             {
                 //nested if statement to update player position (y ^ U) and determine whether he will teleport to the bottom or not
-                if (y >= 0 && y <= 9) 
+                if (y >= 9) 
                 {
-                    y -= 1;
+                    y --;
 
-                    if (y < 0)
-                    {
-                        y = 9;
-                    }
+                    
         
+                } else {
+                    y = 0;   
+                
                 }
             }
             public void Down()
