@@ -13,9 +13,32 @@ namespace Pacman
         //Method that will create our object of pac-man and will handle input and output of our program.
         public static void Main(String[] args)
         {
-            PacmanMover x = new PacmanMover();
+            PacmanMover pacman = new PacmanMover();
 
-            locator();
+             do {
+                    Console.WriteLine("Current location -\tX: " + x + "\tY: " + y);
+                    Console.WriteLine("(U)p, (D)own, (L)eft, (R)ight, or (Q)uit: ");
+                    char answer = Convert.ToChar(Console.ReadLine());
+
+                    switch (answer)
+                    {
+                        case 'U':
+                            pacman.Up();
+                            break;
+                        case 'D':
+                            pacman.Down();
+                            break;
+                        case 'L':
+                            pacman.Left();
+                            break;
+                        case 'R':
+                            pacman.Right();
+                            break;
+                        case 'Q':
+                            exitSequence();
+                            break;
+                    }
+                } while (answer != 'Q');
             
 
             //Method that will create our pac-man object in the middle of the screen and keep updating its position until the player wants to stops.
@@ -30,42 +53,7 @@ namespace Pacman
                 Console.WriteLine("Thanks for playing!");
             }
 
-            void locator()
-            { // while
-                Console.WriteLine("Current location -\tX: " + x. + "\tY: " + y);
-                Console.WriteLine("(U)p, (D)own, (L)eft, (R)ight, or (Q)uit: ");
-                char answer = Convert.ToChar(Console.ReadLine());
-                int numanswer = 0;
-                switch (answer)
-                {
-                    case 'U':
-                         x.Up();
-                         break;
-                    case 'D':
-                         numanswer = 2;
-                         break;
-                    case 'L':
-                         numanswer = 3;
-                         break;
-                    case 'R':
-                         numanswer = 4;
-                         break;
-                    case 'Q':
-                        exitSequence();
-                        break;
-                }
-          
-
-
-
-
-            }
-
-            
-
-
         }
-
 
     }
 }

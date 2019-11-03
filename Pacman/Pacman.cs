@@ -29,14 +29,34 @@ using System;
             //Class variables that are used to hold the current position that pac-man is in.
             private int x;
             private int y;
-    //getter setter
 
             //Constructor that will initialize the position of pac-man to the one that is passed in as a parameter.
             public PacmanMover()
             {
-                this.x = 5;
-                this.y = 5;
+                x = 5;
+                y = 5;
+            }
 
+            public int getX()
+            {
+                return x;
+            }
+            
+            public int getY()
+            {
+                return y;
+            }
+            
+            public int setX(int x)
+            {
+                this.x = x;
+                return x;
+            }
+
+            public int setY(int y)
+            {
+                this.y = y;
+                return y;
             }
 
             //Methods that will update pac-man's position to be one spot to the right, left, up or down.
@@ -46,13 +66,11 @@ using System;
                 if (x >= 0 && x <= 9)
                 {
                     x -= 1;
-
-                    if (x < 0)
-                    {
-                        x = 9;
-                    }
-
                 }  
+                else
+                {
+                    x = 9;
+                }
             }
             public void Right()
             {
@@ -60,12 +78,10 @@ using System;
                 if (x >= 0 && x <= 9)
                 {
                     x += 1;
-            
-                    if (x > 9)
-                    {
-                        x = 0;
-                    }
-
+                }
+                else
+                {
+                    x = 0;
                 }
             }
             public void Up()
@@ -74,12 +90,10 @@ using System;
                 if (y >= 9) 
                 {
                     y --;
-
-                    
-        
-                } else {
+                } 
+                else 
+                {
                     y = 0;   
-                
                 }
             }
             public void Down()
@@ -88,12 +102,10 @@ using System;
                 if (y >= 0 && y <= 9)
                 {
                     y += 1;
-            
-                    if (y > 9)
-                    {
-                        y = 0;
-                    }
-
+                }
+                else
+                {
+                    y = 0;
                 }
             }
         }
