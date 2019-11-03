@@ -14,25 +14,25 @@ namespace Pacman
         public static void Main(String[] args)
         {
             PacmanMover pacman = new PacmanMover();
-
+            char answer = ' ';
              do {
-                    Console.WriteLine("Current location -\tX: " + x + "\tY: " + y);
+                    Console.WriteLine("Current location -\tX: " + pacman.getX() + "\tY: " + pacman.getY());
                     Console.WriteLine("(U)p, (D)own, (L)eft, (R)ight, or (Q)uit: ");
-                    char answer = Convert.ToChar(Console.ReadLine());
+                    answer = Convert.ToChar(Console.ReadLine());
 
                     switch (answer)
                     {
-                        case 'U':
-                            pacman.Up();
+                        case 'U':  
+                            pacman.setY(pacman.Up(pacman.getY()));
                             break;
                         case 'D':
-                            pacman.Down();
+                            pacman.setY(pacman.Down(pacman.getY()));
                             break;
                         case 'L':
-                            pacman.Left();
+                            pacman.setX(pacman.Left(pacman.getX()));
                             break;
                         case 'R':
-                            pacman.Right();
+                            pacman.setX(pacman.Right(pacman.getX()));
                             break;
                         case 'Q':
                             exitSequence();

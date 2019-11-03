@@ -21,7 +21,7 @@ namespace Color
             //3. Repeat step 2 until the user inputs 8.
 
             int R, G, B;
-            Color userColor = new Color();
+            ColorEditor userColor = new ColorEditor();
             do
             {
                 Console.WriteLine("Do you want to:\n1) Increase Red, 2) Decrease Red\n3) Increase Green, 4) Decrease Green\n5) Increase Blue, 6) Decrease Blue\n7) Print the inverse, or 8) Quit");

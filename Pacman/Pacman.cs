@@ -60,52 +60,56 @@ using System;
             }
 
             //Methods that will update pac-man's position to be one spot to the right, left, up or down.
-            public void Left()
+            public int Left(int x)
             {
                 //nested if statement to update player position (x <- L) and determine whether he will teleport to the right side or not
                 if (x >= 0 && x <= 9)
                 {
-                    x -= 1;
+                    x --;
                 }  
-                else
+                else if (x == -1)
                 {
                     x = 9;
                 }
+                return x;
             }
-            public void Right()
+            public int Right(int x)
             {
                 //nested if statement to update player position (x -> R) and determine whether he will teleport to the left side or not
                 if (x >= 0 && x <= 9)
                 {
-                    x += 1;
+                    x ++;
                 }
-                else
+                else if (x == 10)
                 {
                     x = 0;
                 }
+                return x;
             }
-            public void Up()
+            public int Up(int y)
             {
                 //nested if statement to update player position (y ^ U) and determine whether he will teleport to the bottom or not
-                if (y >= 9) 
+                if (y >= 0 && x <= 9) 
                 {
                     y --;
                 } 
-                else 
+                else if (y == -1)
                 {
-                    y = 0;   
+                    y = 9;   
                 }
+                return y;
             }
-            public void Down()
+            public int Down(int y)
             {
                 //nested if statement to update player position (y v D) and determine whether he will teleport to the top or not
                 if (y >= 0 && y <= 9)
                 {
-                    y += 1;
+                    y ++;
                 }
-                else
+                else if (y == 10)
                 {
                     y = 0;
                 }
+                return y;
             }
         }

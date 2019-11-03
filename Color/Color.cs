@@ -9,7 +9,7 @@
 using System;
 
 //Class to create new colors using RGB
-public class Color
+public class ColorEditor
 {
     //Class variables that are used to hold the current color values.
     int R;
@@ -19,7 +19,7 @@ public class Color
 
 
     //Constructor that will initialize the value of colors that are passed as the parameter
-    public Color(int R, int G, int B)
+    public ColorEditor(int R, int G, int B)
     {
         R = 254;
         G = 2;
@@ -27,32 +27,32 @@ public class Color
     }
 
     //Methods to increase or decrease the red, green and blue components
-    public void IncreaseRed(int R)
+    public int IncreaseRed(int R)
     {
         R += 1;
         return R;
     }
-    public void DecreaseRed(int R)
+    public int DecreaseRed(int R)
     {
         R -= 1;
         return R;
     }
-    public void IncreaseGreen(int G)
+    public int IncreaseGreen(int G)
     {
         G += 1;
         return G;
     }
-    public void DecreaseGreen(int G)
+    public int DecreaseGreen(int G)
     {
         G -= 1;
         return G;
     }
-    public void IncreaseBlue(int B)
+    public int IncreaseBlue(int B)
     {
         B += 1;
         return B;
     }
-    public void DecreaseBlue(int B)
+    public int DecreaseBlue(int B)
     {
         B -= 1;
         return B;
@@ -71,7 +71,7 @@ public class Color
     //Method that calculates the Luminance and returns the string representing the current values for each component
     public string ToString(int R, int G, int B)
     {
-        int L = (0.2126 * R) + (0.7512 * G) + (0.0722);
+        int L = ((int)0.2126 * R) + ((int)0.7512 * G) + ((int)0.0722 * B);
         string newColors = "R: " + R + "\tG: " + G + "\tB: " + B + "\tL: " + L;
         return newColors;
     }
