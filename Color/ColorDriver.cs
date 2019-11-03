@@ -19,96 +19,100 @@ namespace Color
             //1. Create a Color object.
             //2. Update the color values based on user input or print the inverse color.
             //3. Repeat step 2 until the user inputs 8.
-
-            int R, G, B;
+            
             ColorEditor userColor = new ColorEditor();
+            int choice;
+            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
             do
             {
+               
                 Console.WriteLine("Do you want to:\n1) Increase Red, 2) Decrease Red\n3) Increase Green, 4) Decrease Green\n5) Increase Blue, 6) Decrease Blue\n7) Print the inverse, or 8) Quit");
-                int choice = Convert.ToInt32(Console.ReadLine());
+                choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice) 
                 {
                     case 1: // increase red
-                        if (R >= 0 && R <= 255)
+                        if (userColor.getRed() >= 0 && userColor.getRed() <= 255)
                         {
-                            R = userColor.IncreaseRed(R);
-                            userColor.toString(R, G, B);
+                            userColor.setRed(userColor.IncreaseRed(userColor.getRed()));
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
-                        else if (R > 255) 
+                        else if (userColor.getRed() == 256) 
                         {
                             Console.WriteLine("Red cannot increase further.");
-                            userColor.toString(R, G, B);
+                            userColor.setRed(255);
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
                         break;
                     case 2: // decrease red
-                        if (R >= 0 && R <= 255)
+                        if (userColor.getRed() >= 0 && userColor.getRed() <= 255)
                         {
-                            R = userColor.DecreaseRed(R);
-                            userColor.toString(R, G, B);
+                            userColor.setRed(userColor.DecreaseRed(userColor.getRed()));
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
-                        else if (R < 0)
+                        else if (userColor.getRed() == -1)
                         {
                             Console.WriteLine("Red cannot decrease further.");
-                            userColor.toString(R, G, B);
+                            userColor.setRed(0);
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
                         break;
                     case 3: // increase green
-                        if (G >= 0 && G <= 255) 
+                        if (userColor.getGreen() >= 0 && userColor.getGreen() <= 255) 
                         {
-                            G = userColor.IncreaseGreen(G);
-                            userColor.toString(R, G, B);
+                            userColor.setGreen(userColor.IncreaseGreen(userColor.getGreen()));
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
-                        else if (G > 255)
+                        else if (userColor.getGreen() == 256)
                         {
                             Console.WriteLine("Green cannot increase further.");
-                            userColor.toString(R, G, B);
+                            userColor.setRed(255);
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
                         break;
                     case 4: // decrease green
-                        if (G >= 0 && G <= 255)
+                        if (userColor.getGreen() >= 0 && userColor.getGreen() <= 255)
                         {
-                            G = userColor.DecreaseGreen(G);
-                            userColor.toString(R, G, B);
+                            userColor.setGreen(userColor.DecreaseGreen(userColor.getGreen()));
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
-                        else if (G < 0)
+                        else if (userColor.getGreen() == -1)
                         {
                             Console.WriteLine("Green cannot decrease further.");
-                            userColor.toString(R, G, B);
+                            userColor.setGreen(0);
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
                         break;
                     case 5: // increase blue
-                        if (B >= 0 && B <= 255)
+                        if (userColor.getBlue() >= 0 && userColor.getBlue() <= 255)
                         {
-                            B = userColor.IncreaseBlue(B);
-                            userColor.toString(R, G, B);
+                            userColor.setBlue(userColor.IncreaseBlue(userColor.getBlue()));
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
-                        else if (B > 255)
+                        else if (userColor.getBlue() == 256)
                         {
                             Console.WriteLine("Blue cannot increase further.");
-                            userColor.toString(R, G, B);
+                            userColor.setBlue(255);
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
                         break;
                     case 6: // decrease blue
-                        if (B >= 0 && B <= 255)
+                        if (userColor.getBlue() >= 0 && userColor.getBlue() <= 255)
                         {
-                            B = userColor.DecreaseBlue(B);
-                            userColor.toString(R, G, B);
+                            userColor.setBlue(userColor.DecreaseBlue(userColor.getBlue()));
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
-                        else if (B < 0) 
+                        else if (userColor.getBlue() == -1) 
                         {
                             Console.WriteLine("Blue cannot decrease further.");
-                            userColor.toString(R, G, B);
+                            userColor.setBlue(0);
+                            userColor.ToString(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         }
                         break;
                     case 7: // print inverse
-                        userColor.PrintInverse(R, G, B);
+                        userColor.PrintInverse(userColor.getRed(), userColor.getGreen(), userColor.getBlue());
                         break;
                     } 
-
-            
-
-
             } while (choice != 8);
 
         if(choice == 8)
